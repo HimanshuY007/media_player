@@ -7,6 +7,7 @@ import { useEffect, useRef } from "react";
 import useCursorDetect from "./hooks/useCursorDetect";
 import { audioFormats, videoFormats } from "./utils/formats";
 import Media from "./components/Media";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const { mediaList } = useMedia();
@@ -28,10 +29,11 @@ function App() {
   }, [displayRef, setDisplayRef]);
   return (
     <>
+      <Toaster />
       <div className="w-screen h-screen flex flex-col justify-between items-center ">
         <div className="flex justify-center items-center py-8">
           <img
-            src="src/assets/assignment.png"
+            src="/assignment.png"
             alt="Title"
             className="w-1/2 select-none"
             draggable={false}
@@ -55,7 +57,7 @@ function App() {
         </div>
         <div className="flex justify-center items-center">
           <img
-            src="src/assets/submission.png"
+            src="/submission.png"
             alt="Himanshu Yadav"
             className="w-1/2 py-7 opacity-30"
             draggable={false}
