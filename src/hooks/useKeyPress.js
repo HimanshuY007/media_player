@@ -1,0 +1,21 @@
+import { useEffect } from "react";
+
+const useKeyPress = (targetCode, action) => {
+  useEffect(() => {
+    console.log("KeyPress Effect Called");
+    const onKeyPress = (e) => {
+      console.log(e.keyCode);
+      if (e.keyCode === targetCode) {
+        action();
+      }
+    };
+    document.addEventListener("keydown", onKeyPress);
+    // Adding additional eventlistener in case of any reference passed
+
+    return () => {
+      document.removeEventListener("keydown", onKeyPress);
+    };
+  }, [targetCode, action]);
+};
+
+export default useKeyPress;
