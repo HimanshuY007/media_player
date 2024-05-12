@@ -23,19 +23,6 @@ const Speed = () => {
       const rangeWidth = rangeRef.current.getBoundingClientRect().width;
       const containerWidth = containerRef.current.getBoundingClientRect().width;
       const fraction = ((speed - rangeMin) * 100) / (rangeMax - rangeMin);
-      console.log(
-        "The fraction is",
-        fraction,
-        rangeWidth,
-        containerWidth,
-        rangeMin,
-        rangeMax,
-        speed
-      );
-      console.log(
-        "The percentage is ",
-        (rangeWidth / containerWidth) * (100 - fraction)
-      );
       setPercentage((rangeWidth / containerWidth) * (100 - fraction));
     }
   }, [speed]);

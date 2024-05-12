@@ -2,9 +2,7 @@ import { useEffect } from "react";
 
 const useKeyPress = (targetCode, action) => {
   useEffect(() => {
-    console.log("KeyPress Effect Called");
     const onKeyPress = (e) => {
-      console.log(e.keyCode);
       if (e.keyCode === targetCode) {
         action();
       }
